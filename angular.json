@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "BMICalc"
+    }
+  },
+  "defaultProject": "BMICalc",
+  "cli": {
+    "analytics": false
+  }
 }
