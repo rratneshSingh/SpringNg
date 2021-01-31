@@ -13,6 +13,8 @@ export class AppComponent {
   isC2 = true;
   styles = "color: red;"
   bgColor = "red";
+  arrayItems = [ 'bmw', 'maruti', 'ferrari'];
+  isSubmit = false;
 
   changeColor( value ) {
     
@@ -24,5 +26,10 @@ export class AppComponent {
 
   getInput( event ) {
     console.log( event );
+  }
+
+  show( value ){
+    this.isSubmit = true;
+    console.log( value );
   }
 }
