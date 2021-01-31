@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  @Input() a;
+
+  constructor() { 
+    console.log(this.a);
+  }
 
   ngOnInit(): void {
+    console.log(this.a);
   }
 
 }

@@ -1,8 +1,8 @@
 <app-header></app-header>
 
-<h1>Welcome</h1>
+<p>Welcome</p>
 
-<app-sign-up></app-sign-up>
+<app-sign-up [a]="9"></app-sign-up>
 
 <!-- <div id="mydiv" [ngClass]="{
     c1: isC1,
@@ -60,3 +60,7 @@ two Way
     <p style="color: red;" *ngIf="cityInp.errors && cityInp.errors.required && cityInp.dirty">City is required.</p>
     <button (click)="show( myForm.value )">submit</button>
 </form>
+
+
+
+<!-- <div [attr.style]="sanitization.bypassSecurityTrustStyle('color:red')" >Test</div> -->

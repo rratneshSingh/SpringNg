@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {
+  DomSanitizer
+} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -31,5 +34,8 @@ export class AppComponent {
   show( value ){
     this.isSubmit = true;
     console.log( value );
+  }
+
+  constructor(public sanitization:DomSanitizer){
   }
 }
