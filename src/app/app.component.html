@@ -1,8 +1,8 @@
 <app-header></app-header>
 
-<p>Welcome</p>
+<p appHighlight [highLightColor]="'violet'" *ngIf="selectedArrayItem">Welcome {{ selectedArrayItem }}</p>
 
-<app-sign-up [a]="9"></app-sign-up>
+<app-sign-up [data]="arrayItems" (onDataSelect)="selectedArrayItem = $event"></app-sign-up>
 
 <!-- <div id="mydiv" [ngClass]="{
     c1: isC1,
@@ -43,7 +43,7 @@ two Way
 <button (click)="isC1 = !isC1">toggle</button>
 
 
-<div *ngFor="let item of arrayItems; let i = index">{{ i + 1 }}:{{ item }}</div>
+<div appHighlight [highLightColor]="'red'" *ngFor="let item of arrayItems; let i = index">{{ i + 1 }}:{{ item }}</div>
 
 <!-- template variable -->
 
@@ -53,7 +53,7 @@ two Way
 <!-- forms -->
 
 <br><br><br>
-<form #myForm="ngForm">
+<form #myForm="ngForm" class="myform">
     Name:<input type="text" ngModel name="name" required #nameInp="ngModel"> <br>
     <p style="color: red;" *ngIf="nameInp.errors && nameInp.errors.required && nameInp.dirty">Name is required.</p>
     City<input type="text" ngModel name="city" #cityInp="ngModel" required><br>
@@ -64,3 +64,15 @@ two Way
 
 
 <!-- <div [attr.style]="sanitization.bypassSecurityTrustStyle('color:red')" >Test</div> -->
+<!-- 
+<div [ngSwitch]="switchValue">
+    <p *ngSwitchCase="1">value is 1</p>
+    <p *ngSwitchCase="2">value is 2</p>
+    <p *ngSwitchDefault>Nothing matched</p>
+</div> -->
+
+<!-- <div *ngIf="true">
+    <input type="text" #varIn>
+    <button (click)="show( varIn.value )">Show value</button>
+</div> -->
+

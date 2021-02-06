@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import {
   DomSanitizer
 } from '@angular/platform-browser';
@@ -6,7 +6,7 @@ import {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'BMICalc';
@@ -18,6 +18,8 @@ export class AppComponent {
   bgColor = "red";
   arrayItems = [ 'bmw', 'maruti', 'ferrari'];
   isSubmit = false;
+  switchValue = 2;
+  selectedArrayItem = null;
 
   changeColor( value ) {
     

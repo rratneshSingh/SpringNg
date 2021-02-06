@@ -1,1 +1,4 @@
 <p>sign-up works!</p>
+<ul>
+    <li *ngFor="let item of data" (click)="emitSelectedItem( item )">{{ item }} </li>
+</ul>
