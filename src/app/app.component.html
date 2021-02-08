@@ -56,9 +56,17 @@ two Way
 <form #myForm="ngForm" class="myform">
     Name:<input type="text" ngModel name="name" required #nameInp="ngModel"> <br>
     <p style="color: red;" *ngIf="nameInp.errors && nameInp.errors.required && nameInp.dirty">Name is required.</p>
-    City<input type="text" ngModel name="city" #cityInp="ngModel" required><br>
-    <p style="color: red;" *ngIf="cityInp.errors && cityInp.errors.required && cityInp.dirty">City is required.</p>
-    <button (click)="show( myForm.value )">submit</button>
+    Email<input type="text" ngModel name="email" #emailInp="ngModel" required><br>
+    <p style="color: red;" *ngIf="emailInp.errors && emailInp.errors.required && emailInp.dirty">Eamil is required.</p><br>
+    Address: <br>
+    <div ngModelGroup="address" #address="ngModelGroup">
+        City:<input type="text" ngModel name="city" #cityInp="ngModel" required><br>
+        <!-- <p style="color: red;" *ngIf="cityInp.errors && cityInp.errors.required && cityInp.dirty">City is required.</p> -->
+        Country:<input type="text" ngModel name="country" #countryInp="ngModel" required><br>
+        <!-- <p style="color: red;" *ngIf="countryInp.errors && countryInp.errors.required && countryInp.dirty">Country is required.</p> -->
+    </div>
+    <p style="color: red;" *ngIf="address.invalid && address.touched">Address is incomplete.</p>
+    <button (click)="show( myForm )">submit</button>
 </form>
 
 
