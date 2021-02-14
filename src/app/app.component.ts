@@ -40,4 +40,6 @@ export class AppComponent {
 
   constructor(public sanitization:DomSanitizer){
   }
+
+
 }

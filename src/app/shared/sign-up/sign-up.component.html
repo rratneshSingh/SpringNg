@@ -7,13 +7,16 @@
 <form [formGroup]="signUpForm">
     <div>
         Name: <input type="text" formControlName="name" >
-        <p style="color: red;" *ngIf="signUpForm.get('name').errors && signUpForm.get('name').errors.required && signUpForm.get('name').touched">Name is required.</p>
+        <p style="color: red;" *ngIf="nameFC.errors?.required && nameFC.touched">Name is required.</p>
     </div>
     <div>
         Email: <input type="text" formControlName="email" >
+        <p style="color: red;" *ngIf="signUpForm.get('email').errors?.required && signUpForm.get('email').touched">Eami is required.</p>
     </div>
     <div>
         Password: <input type="text" formControlName="password" >
+        <p style="color: red;" *ngIf="passwordFC.errors?.required && passwordFC.touched">Password is required.</p>
+        <p style="color: red;" *ngIf="passwordFC.errors?.minlength && passwordFC.touched">Password should be minimum of 8 characters.</p>
     </div>
     <button (click)="signUp()" [disabled]="signUpForm.invalid">Submit</button>
 </form>

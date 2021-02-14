@@ -26,9 +26,20 @@ export class SignUpComponent implements OnInit {
       password: new FormControl('', [ Validators.required, Validators.minLength( 8 ) ] )
     });
     if ( this.user ) {
-      this.signUpForm.patchValue( this.user );
+      this.signUpForm.patchValue( {
+        name: 'Ratnesh'
+      } );
       this.markAsTouched();
     }
+    // this.signUpForm.get('name').valueChanges.subscribe(( value ) => {
+    //   if ( value.trim() ){
+    //     this.signUpForm.get('email').setValidators( [] );
+    //     this.signUpForm.get('email').updateValueAndValidity();
+    //   } else {
+    //     this.signUpForm.get('email').setValidators(  [ Validators.email, Validators.required ] );
+    //     this.signUpForm.get('email').updateValueAndValidity();   
+    //   }
+    // })
   }
 
   getUser() {
@@ -47,6 +58,14 @@ export class SignUpComponent implements OnInit {
   signUp() {
     console.log(this.signUpForm.value);
     localStorage.setItem('signUpData', JSON.stringify( this.signUpForm.value ) );
+  }
+
+  get nameFC(){
+    return this.signUpForm.get('name');
+  }
+
+  get passwordFC() {
+    return this.signUpForm.get('password');
   }
 
 }
