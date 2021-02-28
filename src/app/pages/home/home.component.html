@@ -1,1 +1,6 @@
 <p>home works!</p>
+<!-- {{ data | number: '1.0-2' | percent }} -->
+<!-- {{ text | textTruncate }} -->
+<input type="text" (input)="setCount( myInput.value )" #myInput>
+<button (click)="getCount()">GetCount</button>
+{{ count }}

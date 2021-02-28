@@ -1,1 +1,4 @@
 <p>login works!</p>
+<input type="text" (input)="setCount( myInput.value )" #myInput>
+<button (click)="getCount()">GetCount</button>
+{{ count }}

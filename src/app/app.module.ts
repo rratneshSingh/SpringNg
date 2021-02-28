@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { BlogService } from './shared/services/blog.service';
 
 
 @NgModule({
@@ -21,7 +22,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
       ]
     )
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

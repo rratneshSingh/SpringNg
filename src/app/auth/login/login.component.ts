@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from 'src/app/shared/services/blog.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  count = 0;
+
+  constructor( private blogService:BlogService) { }
 
   ngOnInit(): void {
+    this.count = this.blogService.getCount();
+  }
+
+  getCount() {
+    this.count = this.blogService.getCount();
+  }
+
+  setCount( value) {
+    this.blogService.setCount( value );
   }
 
 }

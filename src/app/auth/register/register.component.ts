@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from 'src/app/shared/services/blog.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  count = 0;
+  constructor( private blogService: BlogService ) { }
 
   ngOnInit(): void {
+    this.count = this.blogService.getCount();
   }
 
 }
